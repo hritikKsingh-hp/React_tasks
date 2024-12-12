@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.center{
+    margin: auto;
+    width: 50%;
+    border: 3px solid blue;
+    padding: 10px;
+    text-align: center;
+}
+
+.header{
+    background: blue;
+    color:white;
+border-radius: 10px;
+}
+.task{
+    padding-left: 10px;
+}
+
+.items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.button{
+    display: flex;
+
+    margin-left: auto;
+}
+
+.Add-btn{
+    width: 100%;
+    background: blue;
+    color: aliceblue;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.text_area {
+    width: 100%;
+    display: flex;
+    text-align: left;
+    margin: 5px 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000; /* Optional: Keep the bottom border for a styled input */
+}
