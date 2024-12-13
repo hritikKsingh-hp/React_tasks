@@ -41,6 +41,7 @@ export default function TaskList({
           >
             <FontAwesomeIcon className="icon" icon={faXmark} />
           </button>
+          <h1>hey</h1>
         </div>
       ))}
     </ul>
