@@ -17,22 +17,22 @@ const initialTasks = [
 export default function App() {
   const [tasks, setTasks] = useState(initialTasks);
   const [isCheck, setIsChecked] = useState({});
- 
+
   const sortedTasks = [...tasks].sort((a, b) => {
     const aChecked = isCheck[a.ID] || false;
     const bChecked = isCheck[b.ID] || false;
-    return aChecked - bChecked; 
+    return aChecked - bChecked;
   });
 
   const handleAddTask = (newTask) => {
     const newTaskObject = {
       ID: tasks.length + 1,
       task: newTask,
-      
-      
+
+
     };
     console.log(tasks.length);
-    setTasks([newTaskObject, ...tasks]); 
+    setTasks([newTaskObject, ...tasks]);
   };
 
   const handleCheckChange = (id) => {
@@ -48,30 +48,41 @@ export default function App() {
 
   const handleDeleteSelected = () => {
     let result = confirm("Want to delete the completed task ?");
-   if (result){
-    const uncheckedTasks = tasks.filter((task) => !isCheck[task.ID]);
-    setTasks(uncheckedTasks); 
-    setIsChecked({}); 
-  }}
+    if (result) {
+      const uncheckedTasks = tasks.filter((task) => !isCheck[task.ID]);
+      setTasks(uncheckedTasks);
+      setIsChecked({});
+    }
+  }
+
+  const handleEditTask = (id, newText) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.ID === id ? { ...task, task: newText } : task
+      )
+    );
+  };
+
 
   return (
     <div className="center">
       <h1 className="header">To-Do</h1>
       <TaskForm onAddTask={handleAddTask}
-      onDeleteSelected={handleDeleteSelected} />
+        onDeleteSelected={handleDeleteSelected} />
       <hr />
       <TaskList
         tasks={sortedTasks}
         isCheck={isCheck}
         onCheckChange={handleCheckChange}
         onDeleteTask={handleDeleteTask}
-        
+        onEditTask={handleEditTask}
       />
+
     </div>
   );
 }
 
-  
+
 
 
 
