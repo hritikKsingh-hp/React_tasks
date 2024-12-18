@@ -1,7 +1,0 @@
-const [iscompletedTasks, setCompletedTasks] = useState({})
-
-  const handlecheckboxchange =(id)=>{
-    setCompletedTasks((prevState)=>({
-      ...prevState,
-      [id]:!prevState[id],
-    }))

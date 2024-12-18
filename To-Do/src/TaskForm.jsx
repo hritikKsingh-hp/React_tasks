@@ -2,9 +2,10 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-export default function TaskForm({ onAddTask, onDeleteSelected }) {
+export default function TaskForm({ onAddTask, onDeleteSelected}) {
   const [newTask, setNewTask] = useState("");
   const [error, setError] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,9 +20,9 @@ export default function TaskForm({ onAddTask, onDeleteSelected }) {
       return;
     }
 
-    onAddTask(newTask); // Call the add task handler
-    setNewTask(""); // Clear input
-    setError(""); // Reset error message
+    onAddTask(newTask); 
+    setNewTask(""); 
+    setError(""); 
   };
 
   return (

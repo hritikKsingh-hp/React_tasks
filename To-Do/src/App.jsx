@@ -18,6 +18,7 @@ export default function App() {
   const [tasks, setTasks] = useState(initialTasks);
   const [isCheck, setIsChecked] = useState({});
 
+
   const sortedTasks = [...tasks].sort((a, b) => {
     const aChecked = isCheck[a.ID] || false;
     const bChecked = isCheck[b.ID] || false;
@@ -68,7 +69,8 @@ export default function App() {
     <div className="center">
       <h1 className="header">To-Do</h1>
       <TaskForm onAddTask={handleAddTask}
-        onDeleteSelected={handleDeleteSelected} />
+        onDeleteSelected={handleDeleteSelected}
+        />
       <hr />
       <TaskList
         tasks={sortedTasks}
@@ -76,6 +78,8 @@ export default function App() {
         onCheckChange={handleCheckChange}
         onDeleteTask={handleDeleteTask}
         onEditTask={handleEditTask}
+       
+
       />
 
     </div>
