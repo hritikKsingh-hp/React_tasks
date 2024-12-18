@@ -5,6 +5,7 @@ import Component1 from "./UseContextHooks";
 import UseReducerHook from "./UseReducerHook";
 import UseRefHook from "./UseRefHook";
 import CustomHooks from "./CustomHooks";
+import Toaster from "./toaster";
 
 export default function App() {
   return (
@@ -30,6 +31,12 @@ export default function App() {
         <hr />
         <h1>Custom Hooks</h1>
         <CustomHooks/>
+        <hr />
+        <h1>Toaster</h1>
+        <Toaster/>
+
+
+
       </div>
     </>
   );
